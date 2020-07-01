@@ -11,9 +11,8 @@ public class Main {
         ArrayList <Shape> circles = new ArrayList<Shape>();
         while (c != 13){
             Scanner cin = new Scanner(System.in);
-            System.out.println("1 : Add ");
-            System.out.println("2 : Get Area ");
-            System.out.println("3 : Get Perimeter ");
+            System.out.println("1 : Add Circle ");
+            System.out.println("2 : Add Rectangle ");
             System.out.println("0 : Get All ");
             System.out.print("Input chose : ");
             c = cin.nextInt();
@@ -39,12 +38,13 @@ public class Main {
                     boolean filledRec = cin.nextBoolean();
                     Rectangle newRec = new Rectangle(width,length,colorRec,filledRec);
                     circles.add(newRec);
+                    break;
                 case 0:
                     for (int i = 0; i < circles.size() ; i++) {
                         System.out.println( "----"+ (i+1) +"----");
                         circles.get(i).outPut();
-                        circles.get(i).getArea();
-                        circles.get(i).getPerimeter();
+                        System.out.println("Area : " + circles.get(i).getArea());
+                        System.out.println("Perimeter : " + circles.get(i).getPerimeter());
                     }
 //                    for (Shape cs: circles){
 //                        cs.outPut();
